@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
+const connectDB = require('./config/connectDB');
 
 const viewEngine = require('./config/viewEngine');
 const webRoutes = require('./route/web');
@@ -15,6 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 viewEngine(app);
 
 app.use(webRoutes);
+
+connectDB();
 
 app.listen(port, () => {
     console.log(`app is running on port ${port}`);
