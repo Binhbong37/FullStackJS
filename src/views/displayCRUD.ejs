@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        />
+        <title>DISPLAY DATA</title>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <table style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <% for(let data of dataTable) { %>
+                <tbody>
+                    <tr>
+                        <td><%= data.email %></td>
+                        <td><%= data.firstName %></td>
+                        <td><%= data.lastName %></td>
+                        <td><%= data.address %></td>
+                        <td>
+                            <a
+                                href="/edit-crud/?id=<%= data.id %>"
+                                class="btn btn-warning"
+                                >Edit</a
+                            >
+                            <a class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <% } %>
+            </table>
+        </div>
+    </body>
+</html>
