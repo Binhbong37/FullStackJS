@@ -16,4 +16,6 @@ router.get('/edit-crud', homeController.getEditCrud);
 
 router.post('/put-crud', homeController.putUserCrud);
 
+router.get('/delete-crud', homeController.deleteUserCrud);
+
 module.exports = router;
