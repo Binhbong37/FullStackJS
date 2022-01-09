@@ -10,13 +10,19 @@ const subDir = '/';
 const logRequests = false;
 
 if (subDir === '/') {
-    console.log('The server config assuming it is serving at the server root. You can control this with the `subDir` variable in index.js.');
+    console.log(
+        'The server config assuming it is serving at the server root. You can control this with the `subDir` variable in index.js.'
+    );
 } else {
-    console.log('The server config assuming it is serving at \'' + subDir + '\'.');
+    console.log(
+        "The server config assuming it is serving at '" + subDir + "'."
+    );
 }
 
 if (logRequests) {
-    console.log('The server will log all incoming request. It\'s not recommended for production use.');
+    console.log(
+        "The server will log all incoming request. It's not recommended for production use."
+    );
 }
 
 // Serve the static files from the React app
@@ -29,7 +35,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(buildDir, 'index.html'));
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3737;
 app.listen(port);
 
 console.log('React.JS App is running on the port ' + port);
