@@ -18,6 +18,26 @@ const postLogin = async (req, res) => {
     });
 };
 
+const getHandleAllUsers = async (req, res) => {
+    let id = req.query.id; // se lay het or 1 user
+
+    if (!id) {
+        return res.status(200).json({
+            errCode: 1,
+            errMessage: 'Missing require parameter',
+            users: [],
+        });
+    }
+    let users = await userServices.getAllUsers(id);
+
+    return res.status(200).json({
+        errCode: 0,
+        errMessage: 'Find User Ok',
+        users,
+    });
+};
+
 module.exports = {
     postLogin,
+    getHandleAllUsers,
 };

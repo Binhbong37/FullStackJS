@@ -21,4 +21,6 @@ router.get('/delete-crud', homeController.deleteUserCrud);
 
 router.post('/api/login', userController.postLogin);
 
+router.get('/api/get-all-users', userController.getHandleAllUsers);
+
 module.exports = router;
