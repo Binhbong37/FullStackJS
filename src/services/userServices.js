@@ -34,7 +34,7 @@ let handleUserLogin = (email, password) => {
                     userData.errMessage = `User is not found`;
                 }
             } else {
-                userData.errorCode = 1;
+                userData.errCode = 1;
                 userData.errMessage = 'Your Email is not exist';
             }
             resolve(userData);
