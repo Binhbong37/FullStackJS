@@ -8,3 +8,7 @@ export const handleLoginApi = (emailUser, passwordUser) => {
     // do Bên Server cái truyền cũng là email, password nên nó đã trùng key
     // { email: email, password: password} => Không phải đặt ngẫu nhiên
 };
+
+export const getAllUsers = (inputId) => {
+    return axios.get(`http://localhost:3000/api/get-all-users?id=${inputId}`);
+};
