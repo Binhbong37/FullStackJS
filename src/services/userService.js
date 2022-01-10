@@ -17,3 +17,9 @@ export const createNewUserFromService = (data) => {
     console.log('check data form file services: ', data);
     return axios.post(`http://localhost:3000/api/create-new-user`, data);
 };
+
+export const deleteUserService = (userId) => {
+    return axios.delete(`http://localhost:3000/api/delete-user`, {
+        data: { id: userId },
+    });
+};

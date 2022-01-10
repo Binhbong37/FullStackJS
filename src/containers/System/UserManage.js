@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import {
     getAllUsers,
     createNewUserFromService,
+    deleteUserService,
 } from '../../services/userService';
 
 import ModalUser from './ModalUser';
@@ -64,6 +65,20 @@ class UserManage extends Component {
         await this.getAllUserFromReact();
     }
 
+    handleDelete = async (data) => {
+        try {
+            let res = await deleteUserService(data.id);
+            if (res.data.message && res.data.message.errCode === 0) {
+                await this.getAllUserFromReact();
+            } else {
+                alert(res.data.message.errMessage);
+            }
+            console.log(res.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     render() {
         let { arrUsers } = this.state;
         return (
@@ -107,7 +122,12 @@ class UserManage extends Component {
                                                 <button className="btn-warning mx-2">
                                                     <i className="fas fa-pencil-alt"></i>
                                                 </button>
-                                                <button className="btn-danger">
+                                                <button
+                                                    className="btn-danger"
+                                                    onClick={() =>
+                                                        this.handleDelete(user)
+                                                    }
+                                                >
                                                     <i className="fas fa-trash"></i>
                                                 </button>
                                             </td>
