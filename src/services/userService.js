@@ -23,3 +23,7 @@ export const deleteUserService = (userId) => {
         data: { id: userId },
     });
 };
+
+export const userEditService = (inputData) => {
+    return axios.put(`http://localhost:3000/api/edit-user`, inputData);
+};
