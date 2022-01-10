@@ -8,6 +8,8 @@ import {
     deleteUserService,
 } from '../../services/userService';
 
+import { emitter } from '../../utils/emitter';
+
 import ModalUser from './ModalUser';
 
 import './userManager.scss';
@@ -44,6 +46,7 @@ class UserManage extends Component {
                 this.setState({
                     isOpenModal: false,
                 });
+                emitter.emit('EVENT_CLEAR_MODAL_DATA');
             }
             console.log('response', response.data.message);
         } catch (error) {
