@@ -23,5 +23,19 @@
             "manage-specialty": "Quản lý Chuyên khoa",
             "specialty": "Chuyên khoa"
         }
+    },
+    "manage-user": {
+        "add": "Thêm mới người dùng",
+        "email": "Email",
+        "password": "Mật khẩu",
+        "firstName": "Tên",
+        "lastName": "Họ",
+        "address": "Địa chỉ",
+        "phone": "Số điện thoại",
+        "gender": "Giới tính",
+        "position": "Chức danh",
+        "role": "Vai trò",
+        "image": "Ảnh",
+        "save": "Lưu người dùng"
     }
 }

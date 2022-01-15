@@ -23,5 +23,19 @@
             "manage-specialty": "Manage Specialty",
             "specialty": "Specialty"
         }
+    },
+    "manage-user": {
+        "add": "Add new User",
+        "email": "Email",
+        "password": "Password",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "address": "Address",
+        "phone": "Phone",
+        "gender": "Gender",
+        "position": "Role",
+        "role": "Position",
+        "image": "Avatar",
+        "save": "Save"
     }
 }

@@ -27,3 +27,7 @@ export const deleteUserService = (userId) => {
 export const userEditService = (inputData) => {
     return axios.put(`http://localhost:3000/api/edit-user`, inputData);
 };
+
+export const getAllCodeService = (inputType) => {
+    return axios.get(`http://localhost:3000/api/all-code?type=${inputType}`);
+};
