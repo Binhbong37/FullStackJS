@@ -22,7 +22,7 @@ let handleUserLogin = (email, password) => {
                 // Check user is exist ( through email)
                 let user = await db.User.findOne({
                     where: { email: email },
-                    attributes: ['email', 'roleId', 'password'],
+                    attributes: ['email', 'roleId', 'password', 'firstName'],
                     raw: true,
                 });
                 if (user) {
@@ -195,10 +195,34 @@ const updateUser = (data) => {
     });
 };
 
+const getAllCodeService = (typeInput) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (!typeInput) {
+                resolve({
+                    errCode: 1,
+                    errMessage: 'Not Found type in db',
+                });
+            } else {
+                let res = {};
+                let allCode = await db.AllCode.findAll({
+                    where: { type: typeInput },
+                });
+                res.errCode = 0;
+                res.data = allCode;
+                resolve(res);
+            }
+        } catch (error) {
+            reject(error);
+        }
+    });
+};
+
 module.exports = {
     handleUserLogin,
     getAllUsers,
     createNewUser,
     deleteUser,
     updateUser,
+    getAllCodeService,
 };

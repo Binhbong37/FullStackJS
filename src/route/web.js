@@ -29,4 +29,6 @@ router.put('/api/edit-user', userController.handleEditUser);
 
 router.delete('/api/delete-user', userController.handleDeleteUser);
 
+router.get('/api/all-code', userController.getAllCode);
+
 module.exports = router;
